@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/swipe_movie_nowplaying"
+    android:background="@color/abbuu"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/abbuu"
-        tools:context=".movie.Detail_nowplaying">
+        tools:context=".movie.Detail_nowplaying"
+        android:orientation="vertical">
 
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbarlayout_id"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="340dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
             <android.support.v7.widget.Toolbar
                 android:id="@+id/tl_detail"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/deepabbuu"
+                android:background="@color/abbuu"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -30,7 +33,7 @@
                 android:id="@+id/collapsingtoolbar_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/deepabbuu"
+                android:background="@drawable/bck"
                 app:contentScrim="?attr/colorPrimary"
                 app:expandedTitleMarginEnd="64dp"
                 app:expandedTitleMarginStart="48dp"
@@ -41,6 +44,7 @@
 
                 <ImageView
                     android:id="@+id/imageview"
+                    android:padding="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -57,7 +61,7 @@
         </android.support.design.widget.AppBarLayout>
 
 
-        <android.support.v4.widget.NestedScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
@@ -138,7 +142,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="HomeLineupGoalkeeper"
+                        android:text="Home Lineup Goalkeeper"
                         android:textColor="@android:color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -163,7 +167,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="HomeLineupDefense"
+                        android:text="Home Lineup Defense"
                         android:textColor="@android:color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -187,7 +191,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="HomeLineupMidfieldt"
+                        android:text="Home Lineup Midfieldt"
                         android:textColor="@android:color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -211,7 +215,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="AwayLineupMidfield"
+                        android:text="Away Lineup Midfield"
                         android:textColor="@android:color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -235,7 +239,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="AwayLineupGoalkeeper"
+                        android:text="Away Lineup Goalkeeper"
                         android:textColor="@android:color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -259,7 +263,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="AwayLineupDefense"
+                        android:text="Away Lineup Defense"
                         android:textColor="@android:color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -276,8 +280,8 @@
             </LinearLayout>
 
 
-        </android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
 
-    </android.support.design.widget.CoordinatorLayout>
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
 

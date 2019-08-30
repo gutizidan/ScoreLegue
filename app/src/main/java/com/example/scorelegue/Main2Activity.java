@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 public class Main2Activity extends AppCompatActivity {
     ImageView imageView;
 
-    TextView tv_nomor, tv_NS, tv_asma, tv_arti, tv_JmlAyat,tv_TurunSurat,tv_urutan,tv_keterangan, title_surah , title_asma ;
+    TextView homeyellowcard, awayyellowcard, AwayLineupDefense, AwayLineupGoalkeeper, HomeLineupDefense,lineupgoalkepperhome,HomeLineupMidfield,AwayLineupMidfield , strEvent ;
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +34,15 @@ public class Main2Activity extends AppCompatActivity {
         collapsingToolbarLayout.setTitleEnabled(true);
 
         //inisialisasi
-        title_surah =  findViewById(R.id.strEvent);
-        tv_nomor =  findViewById(R.id.tv_homeyellowcard);
-        tv_NS =  findViewById(R.id.tv_awayyellowcard);
-        tv_asma =  findViewById(R.id.tv_AwayLineupDefense);
-        tv_arti =  findViewById(R.id.tv_AwayLineupGoalkeeper);
-        tv_JmlAyat =  findViewById(R.id.tv_HomeLineupDefense);
-        tv_TurunSurat =  findViewById(R.id.tv_lineupgoalkepperhome);
-        tv_urutan =  findViewById(R.id.tv_HomeLineupMidfield);
-        tv_keterangan =  findViewById(R.id.tv_AwayLineupMidfield);
+        strEvent =  findViewById(R.id.strEvent);
+        homeyellowcard =  findViewById(R.id.tv_homeyellowcard);
+        awayyellowcard =  findViewById(R.id.tv_awayyellowcard);
+        AwayLineupDefense =  findViewById(R.id.tv_AwayLineupDefense);
+        AwayLineupGoalkeeper =  findViewById(R.id.tv_AwayLineupGoalkeeper);
+        HomeLineupDefense =  findViewById(R.id.tv_HomeLineupDefense);
+        lineupgoalkepperhome =  findViewById(R.id.tv_lineupgoalkepperhome);
+        HomeLineupMidfield =  findViewById(R.id.tv_HomeLineupMidfield);
+        AwayLineupMidfield =  findViewById(R.id.tv_AwayLineupMidfield);
          imageView=findViewById(R.id.imageview);
 
         final ModelJadwal surah = getIntent().getExtras().getParcelable("hasil");
@@ -54,15 +54,15 @@ public class Main2Activity extends AppCompatActivity {
                     .load(thumb)
                     .into(imageView);
 
-            tv_nomor.setText(getIntent().getStringExtra("events3"));
-            tv_NS.setText(getIntent().getStringExtra("events5"));
-            tv_asma.setText(getIntent().getStringExtra("events4"));
-            tv_arti.setText(getIntent().getStringExtra("events7"));
-            tv_JmlAyat.setText(getIntent().getStringExtra("events10"));
-            tv_TurunSurat.setText(getIntent().getStringExtra("events9"));
-            tv_urutan.setText(getIntent().getStringExtra("events6"));
-            tv_keterangan.setText(getIntent().getStringExtra("events8"));
-            title_surah.setText(getIntent().getStringExtra("events"));
+            homeyellowcard.setText(getIntent().getStringExtra("events3"));
+            awayyellowcard.setText(getIntent().getStringExtra("events5"));
+            AwayLineupDefense.setText(getIntent().getStringExtra("events4"));
+            AwayLineupGoalkeeper.setText(getIntent().getStringExtra("events7"));
+            HomeLineupDefense.setText(getIntent().getStringExtra("events10"));
+            lineupgoalkepperhome.setText(getIntent().getStringExtra("events9"));
+            HomeLineupMidfield.setText(getIntent().getStringExtra("events6"));
+            AwayLineupMidfield.setText(getIntent().getStringExtra("events8"));
+            strEvent.setText(getIntent().getStringExtra("events"));
 
         }
     }
