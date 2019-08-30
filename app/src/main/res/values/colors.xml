@@ -5,9 +5,17 @@
     <color name="bg">#4A575E</color>
     <color name="bgCard">#353E42</color>
     <color name="white">#FFFFFF</color>
-    <color name="redmaroon">#9B2B2D</color>
-    <color name="red">#CE1F22</color>
-    <color name="yellow">#ffb300</color>
+    <color name="redmaroon">#2B2B2B</color>
+    <color name="red">#1D1D1D</color>
+    <color name="yellow">#FFFFFF</color>
+    <color name="Wheat">#5dff40</color>
+    <color name="back">#c10f97</color>
+    <color name="Wheat2">#ffcc40</color>
+    <color name="back2">#075056</color>
+    <color name="blue">#053A92</color>
+    <color name="deepblue">#021025</color>
+    <color name="abbuu">#303030</color>
+    <color name="deepabbuu">#131313</color>
 
     <color name="colorAccent">#D81B60</color>
 </resources>
