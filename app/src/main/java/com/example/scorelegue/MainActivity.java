@@ -1,6 +1,7 @@
 package com.example.scorelegue;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -8,12 +9,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -75,10 +79,13 @@ public class MainActivity extends AppCompatActivity {
 //}
 
     private static final String TAG = MainActivity.class.getSimpleName();
+
     private RecyclerView rvSurah;
     private jadwalAdapter allLeaguesAdapter;
     private List<ModelJadwal> allLeagueList = new ArrayList<>();
     private ProgressDialog mProgress;
+    public static final String GOOGLE_ACCOUNT = "google_account";
+
     SwipeRefreshLayout swipeLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
         rvSurah = findViewById(R.id.recycler_view );
         swipeLayout = findViewById(R.id.swipe_container);
+
 
         mProgress = new ProgressDialog(this);
         mProgress.setTitle("Processing...");
@@ -175,4 +183,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Membaca file menu dan menambahkan isinya ke action bar jika ada.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+    public void onComposeAction(MenuItem mi) {
+        Intent m =new Intent(getApplicationContext(), about_me.class);
+        GoogleSignInAccount googleSignInAccount = getIntent().getParcelableExtra(GOOGLE_ACCOUNT);
+        m.putExtra(about_me.GOOGLE_ACCOUNT, googleSignInAccount);
+
+
+        startActivity(m);    }
 }
+

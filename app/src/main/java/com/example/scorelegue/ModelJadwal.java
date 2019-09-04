@@ -12,6 +12,34 @@ public class ModelJadwal {
     private String strHomeLineupDefense;
     private String strHomeLineupMidfield;
 
+    public String getAcountname() {
+        return acountname;
+    }
+
+    public void setAcountname(String acountname) {
+        this.acountname = acountname;
+    }
+
+    public String getAcountemail() {
+        return acountemail;
+    }
+
+    public void setAcountemail(String acountemail) {
+        this.acountemail = acountemail;
+    }
+
+    public String getAcountfoto() {
+        return acountfoto;
+    }
+
+    public void setAcountfoto(String acountfoto) {
+        this.acountfoto = acountfoto;
+    }
+
+    private String acountname;
+    private String acountemail;
+    private String acountfoto;
+
     public String getStrThumb() {
         return strThumb;
     }
