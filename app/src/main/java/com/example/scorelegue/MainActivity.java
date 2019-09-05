@@ -192,6 +192,13 @@ public class MainActivity extends AppCompatActivity {
         Intent m =new Intent(getApplicationContext(), about_me.class);
         GoogleSignInAccount googleSignInAccount = getIntent().getParcelableExtra(GOOGLE_ACCOUNT);
         m.putExtra(about_me.GOOGLE_ACCOUNT, googleSignInAccount);
+        String nama = getIntent().getStringExtra("data1");
+        String email = getIntent().getStringExtra("data2");
+        String image = getIntent().getStringExtra("data3");
+        System.out.println(nama + "yers ");
+        m.putExtra("data1", nama);
+        m.putExtra("data2", email);
+        m.putExtra("data3", image);
 
 
         startActivity(m);    }

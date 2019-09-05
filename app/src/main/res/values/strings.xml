@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">ScoreLegue</string>
     <string name="server_client_id">1050126890217-991nq1mhcpqq2rlanpu9rb5dq87u7ss0.apps.googleusercontent.com</string>
+    <string name="google_sign_up">Sign Up With Google</string>
+    <string name="facebook_app_id">2487135224848555</string> <string name="fb_login_protocol_scheme">2487135224848555</string>
 
 </resources>

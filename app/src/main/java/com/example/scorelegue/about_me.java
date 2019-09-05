@@ -47,11 +47,22 @@ public class about_me extends AppCompatActivity {
         email =  findViewById(R.id.email);
         metu =  findViewById(R.id.logout);
         GoogleSignInAccount googleSignInAccount = getIntent().getParcelableExtra(GOOGLE_ACCOUNT);
-        Glide.with(this)
-                .load(googleSignInAccount.getPhotoUrl())
+
+
+            Glide.with(this)
+                .load(getIntent().getStringExtra("data3"))
                 .into(imageView);
-        nama.setText("Name = "+googleSignInAccount.getDisplayName());
-        email.setText("Email = "+googleSignInAccount.getEmail());
+        System.out.println(getIntent().getStringExtra("data3") +"hehe");
+            nama.setText("Name = "+getIntent().getStringExtra("data1"));
+            email.setText("Email = "+getIntent().getStringExtra("data2"));
+
+
+//            Glide.with(this)
+//                    .load(googleSignInAccount.getPhotoUrl())
+//                    .into(imageView);
+//            nama.setText("Name = " + googleSignInAccount.getDisplayName());
+//            email.setText("Email = " + googleSignInAccount.getEmail());
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getResources().getString(R.string.server_client_id))
                 .requestEmail()
