@@ -97,7 +97,6 @@ public class LoginActivity extends AppCompatActivity {
                     public void onSuccess(LoginResult loginResult) {
                         AccessToken accessToken = loginResult.getAccessToken();
                         useLoginInformation(accessToken);
-                        String userDetil = response.getRawResponse();
 
 
 
@@ -223,6 +222,19 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void onStart() {
         super.onStart();
+
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+
+        boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
+        if (accessToken != null){
+            Toast.makeText(this, "Already Logged In", Toast.LENGTH_SHORT).show();
+
+            useLoginInformation(accessToken);
+        }else{
+            Log.d(TAG, "Not logged in");
+
+        }
+
         GoogleSignInAccount alreadyloggedAccount = GoogleSignIn.getLastSignedInAccount(this);
         if (alreadyloggedAccount != null) {
             Toast.makeText(this, "Already Logged In", Toast.LENGTH_SHORT).show();
@@ -251,10 +263,11 @@ public class LoginActivity extends AppCompatActivity {
                     System.out.println(name + " huha ");
 
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
                     intent.putExtra("data1", name);
                     intent.putExtra("data2", email);
                     intent.putExtra("data3", image);
+                    startActivity(intent);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
