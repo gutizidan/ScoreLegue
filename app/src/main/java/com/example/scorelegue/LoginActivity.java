@@ -225,11 +225,10 @@ public class LoginActivity extends AppCompatActivity {
 
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
 
-        boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
         if (accessToken != null){
             Toast.makeText(this, "Already Logged In", Toast.LENGTH_SHORT).show();
-
             useLoginInformation(accessToken);
+
         }else{
             Log.d(TAG, "Not logged in");
 

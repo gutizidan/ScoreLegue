@@ -87,12 +87,13 @@ public class MainActivity extends AppCompatActivity {
     public static final String GOOGLE_ACCOUNT = "google_account";
 
     SwipeRefreshLayout swipeLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rvSurah = findViewById(R.id.recycler_view );
+        rvSurah = findViewById(R.id.recycler_view);
         swipeLayout = findViewById(R.id.swipe_container);
 
 
@@ -106,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
         fetchscheduleApi();
 
 
-
         swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -115,7 +115,8 @@ public class MainActivity extends AppCompatActivity {
                 fetchscheduleApi();
                 // To keep animation for 4 seconds
                 new Handler().postDelayed(new Runnable() {
-                    @Override public void run() {
+                    @Override
+                    public void run() {
                         // Stop animation (This will be after 3 seconds)
                         swipeLayout.setRefreshing(false);
                     }
@@ -127,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
         setupRecycler();
     }
 
-    private void setupRecycler(){
-        allLeaguesAdapter = new jadwalAdapter(this,  allLeagueList);
+    private void setupRecycler() {
+        allLeaguesAdapter = new jadwalAdapter(this, allLeagueList);
         rvSurah.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rvSurah.setHasFixedSize(true);
         rvSurah.setAdapter(allLeaguesAdapter);
@@ -164,13 +165,13 @@ public class MainActivity extends AppCompatActivity {
                                 item.setStrHomeLineupDefense(hasil.getString("strHomeLineupDefense"));
 
                                 item.setStrThumb(hasil.getString("strThumb"));
-                                System.out.println("qwert "+hasil.getString("strEvent"));
+                                System.out.println("qwert " + hasil.getString("strEvent"));
                                 allLeagueList.add(item);
                             }
                             mProgress.dismiss();
                             allLeaguesAdapter.notifyDataSetChanged();
                         } catch (JSONException e) {
-                                e.printStackTrace();
+                            e.printStackTrace();
                         }
                     }
 
@@ -183,13 +184,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
     public boolean onCreateOptionsMenu(Menu menu) {
         // Membaca file menu dan menambahkan isinya ke action bar jika ada.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
     public void onComposeAction(MenuItem mi) {
-        Intent m =new Intent(getApplicationContext(), about_me.class);
+        Intent m = new Intent(getApplicationContext(), about_me.class);
         GoogleSignInAccount googleSignInAccount = getIntent().getParcelableExtra(GOOGLE_ACCOUNT);
         m.putExtra(about_me.GOOGLE_ACCOUNT, googleSignInAccount);
         String nama = getIntent().getStringExtra("data1");
@@ -201,6 +204,14 @@ public class MainActivity extends AppCompatActivity {
         m.putExtra("data3", image);
 
 
-        startActivity(m);    }
-}
+        startActivity(m);
+    }
 
+
+    @Override
+    public void onBackPressed() {
+
+        moveTaskToBack(true);
+    }
+
+}
